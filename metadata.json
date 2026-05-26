@@ -1,0 +1,8 @@
+{
+  "name": "Italy Itinerary",
+  "description": "A 14-day Italian travel itinerary with a minimalist map layout, Google Maps integration, and day-by-day details.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
