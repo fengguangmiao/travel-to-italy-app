@@ -65,7 +65,7 @@ export const itinerary: Day[] = [
         mapLink: "https://www.google.com/maps/search/?api=1&query=Tribe+Milan+Malpensa",
         details: [
           { id: "d1-2-1", label: "交通", content: "Take Uber" },
-          { id: "d1-2-2", label: "预定信息", content: "未预定✘ 预定方式：Acoor All APP" }
+          { id: "d1-2-2", label: "预定信息", content: "未预定✘ 预定方式：Accor All App" }
         ]
       }
     ]
@@ -112,7 +112,7 @@ export const itinerary: Day[] = [
         location: "V.cl Strentelle, 5, 25019 Sirmione BS",
         mapLink: "https://www.google.com/maps/search/?api=1&query=EasyBistrot+Sirmione",
         details: [
-          { id: "d2-4-1", label: "预定信息", content: "餐厅已预定 / TBA" }
+          { id: "d2-4-1", label: "预定信息", content: "餐厅未预定✘" }
         ]
       },
       {
@@ -125,7 +125,8 @@ export const itinerary: Day[] = [
           { id: "d2-5-1", label: "沿途", content: "经过 Ortisei 镇。可停留补给或拿自行车。" },
           { id: "d2-5-2", label: "ZTL电子通行证", content: "需要和酒店确定开车许可证，将租车车牌发给前台！" },
           { id: "d2-5-3", label: "Guest Pass", content: "向酒店索要免费 Val Gardena Mobil Card (Day 4免费公交)。" },
-          { id: "d2-5-4", label: "预定信息", content: "酒店订单已包含所有晚数的住宿确认" }
+          { id: "d2-5-4", label: "预定信息", content: "酒店订单已包含所有晚数的住宿确认" },
+          { id: "d2-5-5", label: "EMB租赁", content: "租赁EMB的时间需要提前和酒店邮件确认。" }
         ]
       }
     ]
@@ -151,6 +152,8 @@ export const itinerary: Day[] = [
         id: "d3-1",
         title: "Sunrise Spot (日出)",
         type: "sunrise",
+        location: "Via Del Piz, 39040 Castelrotto",
+        mapLink: "https://www.google.com/maps/search/?api=1&query=Via+Del+Piz+Castelrotto",
         details: [
           { id: "d3-1-1", label: "徒步线", content: "从 ICARO Hotel 大门出来，顺着 6a 号步道一路下坡散步，往 Adler Lodge Alpe 的方向走 Via del Piz 的土路。" }
         ]
@@ -169,7 +172,7 @@ export const itinerary: Day[] = [
         location: "Malga Sanon",
         mapLink: "https://www.google.com/maps/search/?api=1&query=Malga+Sanon",
         details: [
-          { id: "d3-3-1", label: "预定信息", content: "午餐需提前确认开放时间" }
+          { id: "d3-3-1", label: "营业时间", content: "8:00-16:00" }
         ]
       },
       {
@@ -207,8 +210,8 @@ export const itinerary: Day[] = [
     shortDesc: "Seceda ➔ Col Raiser Hiking",
     routes: [
       { mode: 'car', label: '自驾前往缆车站', waypoints: ["Icaro Hotel, Castelrotto", "Parcheggio Funivie Seceda"] },
-      { mode: 'walk', label: '高山徒步路线', waypoints: ["Seceda", "Rifugio Firenze", "Col Raiser"] },
-      { mode: 'transit', label: '公交接驳与返程', waypoints: ["Santa Cristina Valgardena", "Ortisei", "Icaro Hotel, Castelrotto"] }
+      { mode: 'walk', label: '高山徒步路线', waypoints: ["Seceda", "Baita Troier Hutte", "Regensburgerhutte", "Col Raiser"] },
+      { mode: 'transit', label: '公交接驳与返程', waypoints: ["Santa Cristina Valgardena", "Ortisei"] }
     ],
     activities: [
       {
@@ -360,8 +363,13 @@ export const itinerary: Day[] = [
     title: "多洛米蒂 (三峰山徒步)",
     shortDesc: "Cadini di Misurina & Tre Cime",
     routes: [
-      { mode: 'car', label: '自驾前往登山口', waypoints: ["Albergo Chalet Lago Antorno", "Rifugio Auronzo", "Albergo Chalet Lago Antorno"] },
-      { mode: 'walk', label: '徒步路线大环线', waypoints: ["Rifugio Auronzo", "Cadini di Misurina", "Rifugio Locatelli", "Rifugio Auronzo"] }
+      { mode: 'car', label: '自驾前往登山口', waypoints: ["Albergo Chalet Lago Antorno", "Rifugio Auronzo"] },
+      { mode: 'walk', label: '徒步路线大环线', waypoints: [
+        "Parcheggio Auronzo, Tre Cime di Lavaredo, 32041 Auronzo di Cadore BL, Italy",
+        "Punto Panoramico Dolomiti, 32041 Auronzo di Cadore BL, Italy",
+        "Rifugio Auronzo, Localita' Forcella Longeres, 32041 Auronzo di Cadore BL, Italy",
+        "Tre Cime di Lavaredo, 32041 Auronzo di Cadore BL, Italy"
+      ] }
     ],
     activities: [
       {
@@ -424,7 +432,7 @@ export const itinerary: Day[] = [
     title: "多洛米蒂 (Cortina 与 Passo Giau)",
     shortDesc: "Cortina Town ➔ Passo Giau Sunset",
     routes: [
-      { mode: 'car', label: '自驾环游观光', waypoints: ["Albergo Chalet Lago Antorno", "Rifugio Auronzo", "Cortina d'Ampezzo", "Passo Giau", "Albergo Chalet Lago Antorno"] }
+      { mode: 'car', label: '自驾环游观光', waypoints: ["Albergo Chalet Lago Antorno", "Cortina d'Ampezzo", "Passo Giau", "Albergo Chalet Lago Antorno"] }
     ],
     activities: [
       {
@@ -477,8 +485,8 @@ export const itinerary: Day[] = [
     title: "多洛米蒂 ➔ 佛罗伦萨",
     shortDesc: "Drive via Bologna ➔ Florence",
     routes: [
-      { mode: 'car', label: '自驾跨大区路段', waypoints: ["Albergo Chalet Lago Antorno", "Fabiola Arcangeli Parcheggio, Bologna", "Florence Airport"] },
-      { mode: 'walk', label: '佛罗伦萨市区步行', waypoints: ["Borgo San Jacopo 21, Florence", "Piazzale Michelangelo", "Trattoria Za Za, Florence", "Borgo San Jacopo 21, Florence"] }
+      { mode: 'car', label: '自驾跨大区路段', waypoints: ["Albergo Chalet Lago Antorno", "Fabiola Arcangeli Parcheggio, Bologna", "Florence Airport Departures"] },
+      { mode: 'walk', label: '佛罗伦萨市区步行', waypoints: ["Borgo San Jacopo 21, Florence", "Giardino delle Rose, Florence", "Piazzale Michelangelo, Florence"] }
     ],
     activities: [
       {
@@ -522,7 +530,7 @@ export const itinerary: Day[] = [
         location: "Borgo San Jacopo, 21, Florence",
         mapLink: "https://www.google.com/maps/search/?api=1&query=Borgo+San+Jacopo+21+Florence",
         details: [
-          { id: "d9-4-1", label: "预定信息", content: "提前与房东确认密码与入住" }
+          { id: "d9-4-1", label: "预定信息", content: "已预定✔ 需要在9月前修改付款信息。预定链接：https://www.airbnb.com/l/hStuaYZX?s=67&unique_share_id=0b0608a0-a8ac-4d43-8e9f-84880f03d0bd" }
         ]
       },
       {
@@ -594,6 +602,13 @@ export const itinerary: Day[] = [
         ]
       },
       {
+        id: "d10-3-5",
+        title: "Vivoli 冰淇淋",
+        type: "food",
+        location: "Vivoli",
+        mapLink: "https://www.google.com/maps/search/?api=1&query=Vivoli+Florence"
+      },
+      {
         id: "d10-4",
         title: "乌菲兹美术馆",
         type: "sightseeing",
@@ -650,15 +665,19 @@ export const itinerary: Day[] = [
         id: "d11-1",
         title: "Sunrise Spot",
         type: "sunrise",
-        location: "Abbazia di San Miniato al Monte",
-        mapLink: "https://www.google.com/maps/search/?api=1&query=Abbazia+di+San+Miniato+al+Monte"
+        details: [
+          { id: "d11-1-1", label: "机位1", content: "Abbazia di San Miniato al Monte", link: "https://www.google.com/maps/search/?api=1&query=Abbazia+di+San+Miniato+al+Monte" },
+          { id: "d11-1-2", label: "机位2", content: "Viale Giuseppe Poggi", link: "https://www.google.com/maps/search/?api=1&query=Viale+Giuseppe+Poggi" }
+        ]
       },
       {
         id: "d11-2",
         title: "咖啡与早餐",
         type: "coffee",
         details: [
-          { id: "d11-2-1", label: "推荐", content: "L’Oper Caffe 等" }
+          { id: "d11-2-1", label: "天好情况", content: "L’Oper Caffe", link: "https://www.google.com/maps/search/?api=1&query=L'Oper+Caffe+Florence" },
+          { id: "d11-2-2", label: "下雨可去", content: "Villani-cafe", link: "https://www.google.com/maps/search/?api=1&query=Villani+cafe+Florence" },
+          { id: "d11-2-3", label: "看穹顶", content: "Oblate Cafeteria", link: "https://www.google.com/maps/search/?api=1&query=Oblate+Cafeteria+Florence" }
         ]
       },
       {
@@ -672,13 +691,19 @@ export const itinerary: Day[] = [
         ]
       },
       {
-        id: "d11-4",
-        title: "晚餐：Osteria Pastella",
+        id: "d11-3-5",
+        title: "午餐推荐",
         type: "food",
-        location: "Osteria Pastella",
-        mapLink: "https://www.google.com/maps/search/?api=1&query=Osteria+Pastella",
+        location: "Mercato Centrale - pizza la pizzeria",
+        mapLink: "https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Florence"
+      },
+      {
+        id: "d11-4",
+        title: "晚餐选择",
+        type: "food",
         details: [
-          { id: "d11-4-1", label: "预定信息", content: "务必提前预订位置，松露奶油必点！" }
+          { id: "d11-4-1", label: "推荐一", content: "Osteria Pastella (务必提前预订，松露奶油必点)", link: "https://www.google.com/maps/search/?api=1&query=Osteria+Pastella" },
+          { id: "d11-4-2", label: "推荐二", content: "Il santo Bevitore (米其林推荐)", link: "https://www.google.com/maps/search/?api=1&query=Il+santo+Bevitore+Florence" }
         ]
       },
       {
@@ -725,12 +750,12 @@ export const itinerary: Day[] = [
       },
       {
         id: "d12-3",
-        title: "午餐探游",
+        title: "午餐探游备选",
         type: "food",
-        location: "Fuorinorma",
-        mapLink: "https://www.google.com/maps/search/?api=1&query=Fuorinorma+Rome",
         details: [
-          { id: "d12-3-1", label: "美食预定信息", content: "小吃排队为主，无需预定" }
+          { id: "d12-3-1", label: "帕尼尼之王", content: "Fuorinorma (Roma)", link: "https://www.google.com/maps/search/?api=1&query=Fuorinorma+Rome" },
+          { id: "d12-3-2", label: "备选", content: "Ce Stamo A Pensa", link: "https://www.google.com/maps/search/?api=1&query=Ce+Stamo+A+Pensa+Rome" },
+          { id: "d12-3-3", label: "推荐披萨", content: "Piccolo Buco (非常推荐，需排队)", link: "https://www.google.com/maps/search/?api=1&query=Piccolo+Buco+Rome" }
         ]
       },
       {
@@ -800,6 +825,22 @@ export const itinerary: Day[] = [
         ]
       },
       {
+        id: "d13-1-5",
+        title: "早餐后咖啡",
+        type: "coffee",
+        location: "Faro - Caffè Specialty",
+        mapLink: "https://www.google.com/maps/search/?api=1&query=Faro+Caffe+Specialty+Rome"
+      },
+      {
+        id: "d13-1-6",
+        title: "午餐推荐",
+        type: "food",
+        details: [
+          { id: "d13-1-6-1", label: "餐厅", content: "FIORE Piazza Pollarola, 29 (周二不开)", link: "https://www.google.com/maps/search/?api=1&query=FIORE+Piazza+Pollarola+Rome" },
+          { id: "d13-1-6-2", label: "外带", content: "Antico Forno Roscioli (街头pizza)", link: "https://www.google.com/maps/search/?api=1&query=Antico+Forno+Roscioli+Rome" }
+        ]
+      },
+      {
         id: "d13-2",
         title: "博尔盖塞美术馆",
         type: "sightseeing",
@@ -808,6 +849,13 @@ export const itinerary: Day[] = [
         details: [
           { id: "d13-2-1", label: "预定信息", content: "未预定✘", link: "https://www.gebart.it/musei/galleria-borghese/" }
         ]
+      },
+      {
+        id: "d13-2-5",
+        title: "划船体验",
+        type: "sightseeing",
+        location: "Temple of Aesculapius (Tempio di Esculapio)",
+        mapLink: "https://www.google.com/maps/search/?api=1&query=Temple+of+Aesculapius+Rome"
       },
       {
         id: "d13-3",
@@ -842,7 +890,8 @@ export const itinerary: Day[] = [
     title: "梵蒂冈",
     shortDesc: "Vatican ➔ St. Peter's ➔ Ponte Umberto I",
     routes: [
-      { mode: 'walk', label: '全天步行与公交', waypoints: ["Via della Fontanella di Borghese 42, Rome", "Vatican Museums", "St. Peter's Basilica", "Ponte Umberto I", "Quel che c'è laboratorio Di Cucina", "Via della Fontanella di Borghese 42, Rome"] }
+      { mode: 'transit', label: '公共交通前往梵蒂冈', waypoints: ["Via della Fontanella di Borghese 42, Rome", "Vatican Museums"] },
+      { mode: 'walk', label: '梵蒂冈及市区步行', waypoints: ["Vatican Museums", "St. Peter's Basilica", "Castel Sant'Angelo", "Ponte Umberto I", "Quel che c'è laboratorio Di Cucina", "Via della Fontanella di Borghese 42, Rome"] }
     ],
     activities: [
       {
@@ -859,7 +908,7 @@ export const itinerary: Day[] = [
         location: "Vatican Museums",
         mapLink: "https://www.google.com/maps/search/?api=1&query=Vatican+Museums",
         details: [
-          { id: "d14-2-1", label: "高光", content: "西斯廷, 雕塑长廊, 《雅典学院》" },
+          { id: "d14-2-1", label: "📸 高光点", content: "Sistine Chapel、雕塑长廊（抓拍穹顶与雕塑光影）、拉斐尔画室（定格壁画《雅典学院》）、西斯廷礼拜堂（静静瞻仰米开朗基罗巨作《创世纪》）、双螺旋大楼梯（Bramante Staircase）。" },
           { id: "d14-2-2", label: "预定信息", content: "未预定✘", link: "https://www.museivaticani.va/content/museivaticani/en.html#lnav_shop" }
         ]
       },
@@ -875,6 +924,22 @@ export const itinerary: Day[] = [
         ]
       },
       {
+        id: "d14-3-5",
+        title: "午餐及咖啡",
+        type: "food",
+        details: [
+          { id: "d14-3-5-1", label: "咖啡推荐", content: "Artigiano del Caffè", link: "https://www.google.com/maps/search/?api=1&query=Artigiano+del+Caffe+Rome" },
+          { id: "d14-3-5-2", label: "午餐选择", content: "Il Colibrì", link: "https://www.google.com/maps/search/?api=1&query=Il+Colibri+Rome" }
+        ]
+      },
+      {
+        id: "d14-3-6",
+        title: "圣天使堡 (可备选)",
+        type: "sightseeing",
+        location: "Castel Sant'Angelo",
+        mapLink: "https://www.google.com/maps/search/?api=1&query=Castel+Sant'Angelo"
+      },
+      {
         id: "d14-4",
         title: "桥上日落 (Ponte Umberto I)",
         type: "sunset",
@@ -886,12 +951,12 @@ export const itinerary: Day[] = [
       },
       {
         id: "d14-5",
-        title: "晚餐：Quel che c'è laboratorio",
+        title: "晚餐选择",
         type: "food",
-        location: "Quel che c'è laboratorio Di Cucina",
-        mapLink: "https://www.google.com/maps/search/?api=1&query=Quel+che+c'e+laboratorio+Roma",
         details: [
-          { id: "d14-5-1", label: "预定信息", content: "请提前定座预留" }
+          { id: "d14-5-1", label: "预定", content: "Quel che c'è laboratorio Di Cucina", link: "https://www.google.com/maps/search/?api=1&query=Quel+che+c'e+laboratorio+Roma" },
+          { id: "d14-5-2", label: "备选预定", content: "Il Maritozzo Rosso - kitchen lab", link: "https://www.google.com/maps/search/?api=1&query=Il+Maritozzo+Rosso+Rome" },
+          { id: "d14-5-3", label: "备选预定", content: "Seu Pizza Illuminati", link: "https://www.google.com/maps/search/?api=1&query=Seu+Pizza+Illuminati+Rome" }
         ]
       },
       {
