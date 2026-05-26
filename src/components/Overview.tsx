@@ -20,7 +20,7 @@ export function Overview({ onSelectDay }: { onSelectDay: (dayId: number) => void
         </div>
         <div className="rounded-2xl overflow-hidden shadow-sm border-2 border-stone-200 relative bg-stone-50 min-h-[300px]">
           <img 
-            src="/cover.png" 
+            src="./cover.png" 
             alt="Italy Route Map" 
             className="w-full h-auto object-cover"
             onError={(e) => {

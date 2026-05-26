@@ -46,11 +46,11 @@ export function DayItinerary({ day }: { day: Day }) {
           <div className="flex flex-col gap-4 mb-2">
             {day.dayNumber === 12 ? (
               <>
-                <img src="/Day12.jpg" alt={`Day ${day.dayNumber} map`} className="w-full rounded-2xl shadow-sm border border-stone-200" />
-                <img src="/Day12-1.jpg" alt={`Day ${day.dayNumber} map part 2`} className="w-full rounded-2xl shadow-sm border border-stone-200" />
+                <img src="./Day12.jpg" alt={`Day ${day.dayNumber} map`} className="w-full rounded-2xl shadow-sm border border-stone-200" />
+                <img src="./Day12-1.jpg" alt={`Day ${day.dayNumber} map part 2`} className="w-full rounded-2xl shadow-sm border border-stone-200" />
               </>
             ) : (
-              <img src={`/Day${day.dayNumber}.jpg`} alt={`Day ${day.dayNumber} map`} className="w-full rounded-2xl shadow-sm border border-stone-200" />
+              <img src={`./Day${day.dayNumber}.jpg`} alt={`Day ${day.dayNumber} map`} className="w-full rounded-2xl shadow-sm border border-stone-200" />
             )}
           </div>
           {day.routes.map((route, i) => (
