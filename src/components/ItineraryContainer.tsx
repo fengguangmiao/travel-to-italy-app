@@ -1,17 +1,36 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Overview } from './components/Overview';
-import { DayItinerary } from './components/DayItinerary';
-import { itinerary } from './data/itinerary';
-import { ArrowLeft, Menu, Map as MapIcon } from 'lucide-react';
+import { Overview } from './Overview';
+import { DayItinerary } from './DayItinerary';
+import { Day } from '../types';
+import { ArrowLeft, Menu, Map as MapIcon, Edit3, Save } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export function ItalyItinerary({ onBack }: { onBack: () => void }) {
+interface ItineraryContainerProps {
+  onBack: () => void;
+  destinationId: string;
+  initialData: Day[];
+  title: string;
+  dates: string;
+  coverImage: string;
+  routeDesc: string;
+}
+
+export function ItineraryContainer({ 
+  onBack, 
+  destinationId, 
+  initialData, 
+  title, 
+  dates, 
+  coverImage, 
+  routeDesc 
+}: ItineraryContainerProps) {
+  const [itinerary, setItinerary] = useState<Day[]>(initialData);
+  const [isEditing, setIsEditing] = useState(false);
   const [activeTab, setActiveTab] = useState<'overview' | 'day'>('overview');
   const [selectedDay, setSelectedDay] = useState<number>(1);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const shouldScrollRef = useRef(false);
 
-  // Allow clicking back to overview
   const goBack = () => {
     setActiveTab('overview');
     shouldScrollRef.current = true;
@@ -24,12 +43,29 @@ export function ItalyItinerary({ onBack }: { onBack: () => void }) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleSave = async () => {
+    try {
+      const response = await fetch(`/api/save-itinerary/${destinationId}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(itinerary)
+      });
+      if (response.ok) {
+        setIsEditing(false);
+        alert('Saved successfully!');
+      } else {
+        alert('Failed to save.');
+      }
+    } catch (e) {
+      console.error(e);
+      alert('Error saving.');
+    }
+  };
 
   const dayData = itinerary.find(d => d.dayNumber === selectedDay);
 
   return (
     <div className="min-h-screen bg-[#fcfbf9] text-stone-800 font-sans font-antialiased selection:bg-[#dfd8c8]">
-      {/* Sticky Header */}
       <header className="sticky top-0 z-50 bg-[#fcfbf9]/80 backdrop-blur-md border-b border-stone-200 shadow-sm">
         <div className="max-w-lg mx-auto px-4 h-14 flex items-center justify-between">
           <AnimatePresence mode="wait">
@@ -40,7 +76,7 @@ export function ItalyItinerary({ onBack }: { onBack: () => void }) {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -10 }}
                 onClick={goBack}
-                className="flex items-center gap-1.5 text-stone-600 hover:text-stone-900 font-medium text-sm transition-colors"
+                className="flex items-center gap-1.5 text-stone-600 hover:text-stone-900 font-medium text-sm transition-colors active:scale-95"
               >
                 <ArrowLeft className="w-4 h-4" /> Overview
               </motion.button>
@@ -58,16 +94,32 @@ export function ItalyItinerary({ onBack }: { onBack: () => void }) {
             )}
           </AnimatePresence>
 
-          <button 
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="w-8 h-8 flex items-center justify-center rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 transition-colors"
-          >
-            <Menu className="w-4 h-4" />
-          </button>
+          <div className="flex items-center gap-2">
+            {isEditing ? (
+              <button 
+                onClick={handleSave}
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded-full transition-colors"
+              >
+                <Save className="w-4 h-4" /> Save
+              </button>
+            ) : (
+              <button 
+                onClick={() => setIsEditing(true)}
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-stone-100 hover:bg-stone-200 text-stone-700 text-sm font-medium rounded-full transition-colors"
+              >
+                <Edit3 className="w-4 h-4" /> Edit
+              </button>
+            )}
+            <button 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 transition-colors"
+            >
+              <Menu className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </header>
 
-      {/* Directory Menu Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
           <>
@@ -101,13 +153,11 @@ export function ItalyItinerary({ onBack }: { onBack: () => void }) {
         )}
       </AnimatePresence>
 
-      {/* Main Content */}
       <AnimatePresence 
         mode="wait"
         onExitComplete={() => {
           if (activeTab === 'overview' && shouldScrollRef.current) {
             shouldScrollRef.current = false;
-            // Delay slightly so layout gets calculated
             setTimeout(() => {
               const el = document.getElementById(`overview-day-${selectedDay}`);
               if (el) {
@@ -126,7 +176,16 @@ export function ItalyItinerary({ onBack }: { onBack: () => void }) {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
           >
-            <Overview onSelectDay={selectDay} />
+            <Overview 
+              itinerary={itinerary} 
+              onSelectDay={selectDay} 
+              isEditing={isEditing} 
+              onUpdateItinerary={setItinerary}
+              title={title}
+              dates={dates}
+              coverImage={coverImage}
+              routeDesc={routeDesc}
+            />
           </motion.div>
         ) : (
           <motion.div
@@ -136,7 +195,15 @@ export function ItalyItinerary({ onBack }: { onBack: () => void }) {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
           >
-            {dayData && <DayItinerary day={dayData} />}
+            {dayData && (
+              <DayItinerary 
+                day={dayData} 
+                isEditing={isEditing} 
+                onUpdateDay={(updatedDay) => {
+                  setItinerary(itinerary.map(d => d.id === updatedDay.id ? updatedDay : d));
+                }} 
+              />
+            )}
           </motion.div>
         )}
       </AnimatePresence>

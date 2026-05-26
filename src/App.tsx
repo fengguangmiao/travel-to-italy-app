@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { LandingPage, Destination } from './components/LandingPage';
-import { ItalyItinerary } from './ItalyItinerary';
-import { HelsinkiItinerary } from './HelsinkiItinerary';
-import { TokyoItinerary } from './TokyoItinerary';
+import { ItineraryPage } from './ItineraryPage';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export default function App() {
@@ -31,37 +29,15 @@ export default function App() {
           <LandingPage onSelectDestination={handleSelectDestination} />
         </motion.div>
       )}
-      {currentView === 'italy' && (
+      {currentView !== 'landing' && (
         <motion.div
-          key="italy"
+          key="itinerary"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.3 }}
         >
-          <ItalyItinerary onBack={handleBack} />
-        </motion.div>
-      )}
-      {currentView === 'helsinki' && (
-        <motion.div
-          key="helsinki"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
-          transition={{ duration: 0.3 }}
-        >
-          <HelsinkiItinerary onBack={handleBack} />
-        </motion.div>
-      )}
-      {currentView === 'tokyo' && (
-        <motion.div
-          key="tokyo"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
-          transition={{ duration: 0.3 }}
-        >
-          <TokyoItinerary onBack={handleBack} />
+          <ItineraryPage destinationId={currentView} onBack={handleBack} />
         </motion.div>
       )}
     </AnimatePresence>

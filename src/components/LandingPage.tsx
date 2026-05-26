@@ -14,7 +14,7 @@ export function LandingPage({ onSelectDestination }: LandingPageProps) {
       id: 'italy',
       title: 'Italy',
       dates: 'Oct 1 - Oct 14',
-      image: './cover.png',
+      image: '/italy/cover.png',
       description: 'Milan ➔ Dolomites ➔ Florence ➔ Rome',
       ready: true
     },
@@ -22,8 +22,8 @@ export function LandingPage({ onSelectDestination }: LandingPageProps) {
       id: 'helsinki',
       title: 'Helsinki',
       dates: 'Oct 15 - Oct 16',
-      image: 'https://images.unsplash.com/photo-1538332576228-eb5b4c4de6f5?w=800&q=80',
-      description: 'Nordic design & architecture',
+      image: '/helsinki/cover.jpg',
+      description: 'City Tour ➔ Departure',
       ready: true
     },
     {

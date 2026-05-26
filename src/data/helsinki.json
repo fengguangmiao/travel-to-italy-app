@@ -1,0 +1,193 @@
+[
+  {
+    "id": "day-15",
+    "dayNumber": 15,
+    "date": "10.15",
+    "title": "罗马 ➔ 赫尔辛基",
+    "shortDesc": "罗马 ➔ 赫尔辛基（晴雨两套预案）",
+    "image": "/helsinki/day15.png",
+    "activities": [
+      {
+        "id": "h15-1",
+        "title": "罗马飞往赫尔辛基",
+        "type": "flight",
+        "details": [
+          {
+            "id": "h15-1-1",
+            "label": "航班",
+            "content": "罗马 T1 飞赫尔辛基，航班号 AY1762（10:30 - 14:55）"
+          }
+        ]
+      },
+      {
+        "id": "h15-2",
+        "title": "机场交通",
+        "type": "train",
+        "details": [
+          {
+            "id": "h15-2-1",
+            "label": "火车",
+            "content": "HSL App 直接购买 Zone ABC 单程票（€4.40），坐 I 线或 P 线环线火车 30分钟直达中央车站。"
+          },
+          {
+            "id": "h15-2-2",
+            "label": "备选",
+            "content": "直接叫 Uber"
+          }
+        ]
+      },
+      {
+        "id": "h15-0",
+        "title": "酒店放行李",
+        "type": "hotel",
+        "details": [
+          {
+            "id": "h15-0-1",
+            "label": "入住",
+            "content": "TBA（待定）"
+          }
+        ]
+      },
+      {
+        "id": "h15-3",
+        "title": "傍晚餐饮：Old Market Hall",
+        "type": "food",
+        "location": "Old Market Hall",
+        "mapLink": "https://www.google.com/maps/search/?api=1&query=Old+Market+Hall+Helsinki",
+        "details": [
+          {
+            "id": "h15-3-1",
+            "label": "提示",
+            "content": "老农贸集市找点吃的"
+          }
+        ]
+      },
+      {
+        "id": "h15-4",
+        "title": "【晴天 Plan A】游船外放动线",
+        "type": "sightseeing",
+        "location": "集市广场码头 (Kauppatori)",
+        "mapLink": "https://www.google.com/maps/search/?api=1&query=Kauppatori+Helsinki",
+        "details": [
+          {
+            "id": "h15-4-1",
+            "label": "购票",
+            "content": "使用 HSL App 购买 Zone AB 单程票。"
+          },
+          {
+            "id": "h15-4-2",
+            "label": "玩法",
+            "content": "15分钟后船到芬兰堡码头，不下船（或站台顺手重新刷码），直接坐同一班船再坐15分钟原路返回市区码头。"
+          }
+        ]
+      },
+      {
+        "id": "h15-5",
+        "title": "【阴雨 Plan B】市区经典动线",
+        "type": "sightseeing",
+        "details": [
+          {
+            "id": "h15-5-1",
+            "label": "坐标1",
+            "content": "Helsinki Cathedral (赫尔辛基大教堂)",
+            "link": "https://www.google.com/maps/search/?api=1&query=Helsinki+Cathedral"
+          },
+          {
+            "id": "h15-5-2",
+            "label": "坐标2",
+            "content": "Red Cathedral (乌斯别斯基红教堂)",
+            "link": "https://www.google.com/maps/search/?api=1&query=Uspenski+Cathedral+Helsinki"
+          },
+          {
+            "id": "h15-5-3",
+            "label": "坐标3",
+            "content": "Allas Sea Pool (阿拉斯海水泳池)",
+            "link": "https://www.google.com/maps/search/?api=1&query=Allas+Sea+Pool+Helsinki"
+          },
+          {
+            "id": "h15-5-4",
+            "label": "坐标4",
+            "content": "SkyWheel Helsinki (赫尔辛基摩天轮)",
+            "link": "https://www.google.com/maps/search/?api=1&query=SkyWheel+Helsinki"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "day-16",
+    "dayNumber": 16,
+    "date": "10.16",
+    "title": "赫尔辛基漫游 ➔ 离境",
+    "shortDesc": "核心购物与航班离境",
+    "image": "/helsinki/day16.jpg",
+    "activities": [
+      {
+        "id": "h16-0",
+        "title": "酒店",
+        "type": "hotel",
+        "details": [
+          {
+            "id": "h16-0-1",
+            "label": "信息",
+            "content": "TBA（待定）"
+          }
+        ]
+      },
+      {
+        "id": "h16-1",
+        "title": "早餐可选",
+        "type": "coffee",
+        "location": "Kanniston Leipomo",
+        "mapLink": "https://www.google.com/maps/search/?api=1&query=Kanniston+Leipomo+Helsinki"
+      },
+      {
+        "id": "h16-2",
+        "title": "美术馆",
+        "type": "sightseeing",
+        "location": "Amos Rex",
+        "mapLink": "https://www.google.com/maps/search/?api=1&query=Amos+Rex+Helsinki"
+      },
+      {
+        "id": "h16-3",
+        "title": "图书馆",
+        "type": "sightseeing",
+        "location": "Oodi (颂歌中央图书馆)",
+        "mapLink": "https://www.google.com/maps/search/?api=1&query=Oodi+Central+Library+Helsinki"
+      },
+      {
+        "id": "h16-4",
+        "title": "核心购物动线",
+        "type": "info",
+        "location": "Esplanadi 商业街",
+        "mapLink": "https://www.google.com/maps/search/?api=1&query=Esplanadi+Helsinki",
+        "details": [
+          {
+            "id": "h16-4-1",
+            "label": "精准打卡",
+            "content": "Marimekko 旗舰店 ＆ Moomin Shop（姆明小屋）"
+          }
+        ]
+      },
+      {
+        "id": "h16-5",
+        "title": "下一站购物",
+        "type": "info",
+        "location": "OMA PUTI",
+        "mapLink": "https://www.google.com/maps/search/?api=1&query=OMA+PUTI+Helsinki"
+      },
+      {
+        "id": "h16-6",
+        "title": "前往机场离境",
+        "type": "flight",
+        "details": [
+          {
+            "id": "h16-6-1",
+            "label": "航班",
+            "content": "航班号 AY61，18:30 从赫尔辛基出发飞往东京。"
+          }
+        ]
+      }
+    ]
+  }
+]
