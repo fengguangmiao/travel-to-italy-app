@@ -73,7 +73,8 @@ export function DayItinerary({ day }: { day: Day }) {
                 <div className="absolute left-6 top-10 bottom-[-16px] w-[2px] bg-stone-200" />
               )}
               
-              <div 
+              <motion.div 
+                whileTap={isInteractive ? { scale: 0.97 } : {}}
                 onClick={() => isInteractive && toggleExpand(activity.id)}
                 className={cn(
                   "bg-white rounded-2xl p-4 shadow-sm border border-stone-100 transition-all duration-200",
@@ -126,9 +127,9 @@ export function DayItinerary({ day }: { day: Day }) {
                                   <a 
                                     href={detail.link} 
                                     target="_blank" 
-                                    rel="noreferrer"
+                                    rel="noopener noreferrer"
                                     onClick={(e) => e.stopPropagation()}
-                                    className="inline-flex items-center gap-1 text-emerald-700 hover:text-emerald-800 font-medium mt-1.5"
+                                    className="inline-flex items-center gap-1 text-emerald-700 hover:text-emerald-800 font-medium mt-1.5 active:scale-95 transition-transform origin-left"
                                   >
                                     {detail.link.includes('google.com/maps') ? 'View on Maps' : '预定链接'} <ExternalLink className="w-3 h-3" />
                                   </a>
@@ -140,9 +141,9 @@ export function DayItinerary({ day }: { day: Day }) {
                               <a 
                                 href={activity.mapLink}
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                                 onClick={(e) => e.stopPropagation()}
-                                className="mt-3 w-full inline-flex items-center justify-center gap-2 bg-[#efece5] hover:bg-[#e4dfd4] text-stone-800 text-sm font-medium py-2 px-4 rounded-xl transition-colors"
+                                className="mt-3 w-full inline-flex items-center justify-center gap-2 bg-[#efece5] hover:bg-[#e4dfd4] text-stone-800 text-sm font-medium py-2 px-4 rounded-xl transition-all active:scale-[0.98]"
                               >
                                 <MapIcon className="w-4 h-4" /> Open in Google Maps
                               </a>
@@ -153,7 +154,7 @@ export function DayItinerary({ day }: { day: Day }) {
                     </AnimatePresence>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           );
         })}

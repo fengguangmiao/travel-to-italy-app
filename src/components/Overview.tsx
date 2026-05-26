@@ -47,7 +47,7 @@ export function Overview({ onSelectDay }: { onSelectDay: (dayId: number) => void
               key={day.id}
               id={`overview-day-${day.dayNumber}`}
               onClick={() => onSelectDay(day.dayNumber)}
-              className="text-left bg-white p-4 rounded-2xl shadow-sm border border-stone-100 hover:shadow-md hover:border-stone-200 transition-all flex items-center justify-between group"
+              className="text-left w-full bg-white p-4 rounded-2xl shadow-sm border border-stone-100 hover:shadow-md hover:border-stone-200 transition-all flex items-center justify-between group active:scale-[0.98]"
             >
               <div>
                 <div className="flex items-center gap-2 mb-1">
